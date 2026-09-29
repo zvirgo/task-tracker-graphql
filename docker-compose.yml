@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: task-tracker-backend
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./server/prisma:/app/prisma
+    environment:
+      - DATABASE_URL=file:./prisma/dev.db
+    restart: unless-stopped
