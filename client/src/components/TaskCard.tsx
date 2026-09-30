@@ -21,9 +21,9 @@ interface TaskCardProps {
 }
 
 const priorityConfig: Record<Task['priority'], { color: string; label: string; chipColor: 'success' | 'warning' | 'error' }> = {
-  LOW: { color: '#10b981', label: 'کم', chipColor: 'success' },
-  MEDIUM: { color: '#f59e0b', label: 'متوسط', chipColor: 'warning' },
-  HIGH: { color: '#ef4444', label: 'فوری', chipColor: 'error' },
+  LOW: { color: '#10b981', label: 'Low', chipColor: 'success' },
+  MEDIUM: { color: '#f59e0b', label: 'Medium', chipColor: 'warning' },
+  HIGH: { color: '#ef4444', label: 'High', chipColor: 'error' },
 };
 
 export const TaskCard: React.FC<TaskCardProps> = ({ task, index, onDelete }) => {
@@ -52,7 +52,6 @@ export const TaskCard: React.FC<TaskCardProps> = ({ task, index, onDelete }) => 
             },
           }}
         >
-          {/* نوار رنگی اولویت مشابه بورد Syncfusion */}
           <Box
             sx={{
               position: 'absolute',
@@ -70,12 +69,12 @@ export const TaskCard: React.FC<TaskCardProps> = ({ task, index, onDelete }) => 
                 <Box {...provided.dragHandleProps} sx={{ display: 'flex', color: '#94a3b8', cursor: 'grab' }}>
                   <DragIndicatorIcon fontSize="small" />
                 </Box>
-                <Typography variant="subtitle2" fontWeight={600} color="#1e293b" sx={{ wordBreak: 'break-word' }}>
+                <Typography variant="subtitle2" color="#1e293b" sx={{ fontWeight: 600, wordBreak: 'break-word' }}>
                   {task.title}
                 </Typography>
               </Stack>
 
-              <Tooltip title="حذف تسک">
+              <Tooltip title="Delete Task">
                 <IconButton size="small" onClick={() => onDelete(task.id)} sx={{ color: '#94a3b8', '&:hover': { color: 'error.main' } }}>
                   <DeleteOutlineIcon sx={{ fontSize: 18 }} />
                 </IconButton>

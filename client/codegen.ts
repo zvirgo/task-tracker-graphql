@@ -11,6 +11,9 @@ const config: CodegenConfig = {
       presetConfig: {
         gqlTagName: 'graphql',
       },
+      config: {
+        useTypeImports: true,
+      },
     },
   },
   ignoreNoDocuments: true,

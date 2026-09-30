@@ -46,7 +46,7 @@ export const KanbanColumn: React.FC<KanbanColumnProps> = ({
       >
         <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center' }}>
           <Box sx={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: accentColor }} />
-          <Typography variant="subtitle2" fontWeight={700} color="#334155">
+          <Typography variant="subtitle2" sx={{ fontWeight: 700 }} color="#334155">
             {title}
           </Typography>
         </Stack>

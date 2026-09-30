@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useQuery, useMutation } from "@apollo/client/react";
 import {
   Container,
@@ -33,7 +33,7 @@ export default function App() {
 
   const { data, loading, error } = useQuery<{ tasks: Task[] }>(GET_TASKS);
 
-  const [createTask] = useMutation(CREATE_TASK, {
+  const [createTask] = useMutation<{ createTask: Task }>(CREATE_TASK, {
     update(cache, { data: mutationData }) {
       if (!mutationData?.createTask) return;
       const existingData = cache.readQuery<{ tasks: Task[] }>({
@@ -154,7 +154,7 @@ export default function App() {
           }}
         >
           <div>
-            <Typography variant="h4" fontWeight={700} color="#0f172a">
+            <Typography variant="h4" sx={{ fontWeight: 700 }} color="#0f172a">
               Task Board
             </Typography>
             <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>

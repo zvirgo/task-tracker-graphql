@@ -46,7 +46,7 @@ export const CreateTaskDialog: React.FC<CreateTaskDialogProps> = ({
   return (
     <Dialog open={open} onClose={onClose} fullWidth maxWidth="sm">
       <form onSubmit={handleSubmit}>
-        <DialogTitle fontWeight={600}>Create New Task</DialogTitle>
+        <DialogTitle sx={{ fontWeight: 600 }}>Create New Task</DialogTitle>
         <DialogContent dividers>
           <Stack spacing={2.5} sx={{ mt: 1 }}>
             <TextField
